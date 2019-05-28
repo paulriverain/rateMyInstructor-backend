@@ -8,9 +8,15 @@ class Api::V1::StudentsController < ApplicationController
 
 
   def create
-    @student = Student.create(first_name: params[:first_name],last_name: params[:last_name], password: params[:password])
+    @student = Student.new(first_name: params[:first_name],last_name: params[:last_name], password: params[:password])
     # byebug
-    render json: @student
+    if @student.save
+      render json: @student
+    else
+      # byebug
+      render json: {error: @student.errors.full_messages}, status: 401
+
+    end
   end
 
 
