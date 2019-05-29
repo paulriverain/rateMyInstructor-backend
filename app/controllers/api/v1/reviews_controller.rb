@@ -23,6 +23,9 @@ class Api::V1::ReviewsController < ApplicationController
 
   def update
     #code
+    # byebug
+    @review = Review.update(params[:id], comment: params[:comment], rating: params[:rating])
+    render json: @review
   end
 
   def destroy
