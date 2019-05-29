@@ -11,13 +11,6 @@ class Student < ApplicationRecord
   validate :unique_full_name
 
   def unique_full_name
-    #code
-    # allFirstNames = Student.all.map{ |name| name.first_name.downcase}
-    # allLastNames = Student.all.map { |name| name.last_name.downcase}
-    #
-    # unless allFirstNames.include?(self.first_name.downcase) && allLastNames.include?(self.last_name.downcase)
-    #   nil
-    # end
     student = Student.find_by("lower(first_name) = ? AND lower(last_name) = ?", self.first_name.downcase, self.last_name.downcase)
 
     if student
