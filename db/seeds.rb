@@ -18,6 +18,6 @@ BOOTCAMPS = [
   "Startup Institute"
 ]
 
-20.times {Student.find_or_create_by(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)}
-20.times {Instructor.find_or_create_by(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, num_mods_taught: Faker::Number.between(1, 100), bootcamp_name: BOOTCAMPS.sample)}
-20.times {Review.find_or_create_by(student_id: Faker::Number.between(1, Student.last.id), instructor_id: Faker::Number.between(1, Instructor.last.id), rating: Faker::Number.between(1, 5), comment: Faker::Quote.most_interesting_man_in_the_world )}
+20.times {Student.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '123')}
+20.times {Instructor.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, num_mods_taught: Faker::Number.between(1, 100), bootcamp_name: BOOTCAMPS.sample)}
+20.times {Review.find_or_create_by(student_id: Faker::Number.between(1, 20), instructor_id: Faker::Number.between(1, 20), rating: Faker::Number.between(1, 5), comment: Faker::Quote.most_interesting_man_in_the_world )}

@@ -5,25 +5,26 @@ class Api::V1::InstructorsController < ApplicationController
     @instructors = Instructor.all
     render json: @instructors
   end
-
-  def new
-    #code
-  end
-
-  def create
-    #code
-  end
-
-  def edit
-    #code
-  end
-
-  def update
-    #code
-  end
-
-  def destroy
-    #code
-  end
+  
+#Stretch feature coming soon...
+  # def new
+  #   #code
+  # end
+  #
+  # def create
+  #   #code
+  # end
+  #
+  # def edit
+  #   #code
+  # end
+  #
+  # def update
+  #   #code
+  # end
+  #
+  # def destroy
+  #   #code
+  # end
 
 end
